@@ -1,8 +1,6 @@
-package com.emlakcepte.model;
+package emlakcepte.model;
 
 import java.time.LocalDateTime;
-
-import com.emlakcepte.model.enums.RealtyType;
 
 public class Realty {
 	
@@ -12,18 +10,21 @@ public class Realty {
 	private User user;
 	private RealtyType status;
 	private String province;
+	private String district;
+	private Types types;
 	
 	public Realty() {
 		super();
 	}
 	
-	public Realty(Long no, String title, LocalDateTime publishedDate, User user, RealtyType status) {
+	public Realty(Long no, String title, LocalDateTime publishedDate, User user, RealtyType status, Types types) {
 		super();
 		this.no = no;
 		this.title = title;
 		this.publishedDate = publishedDate;
 		this.user = user;
 		this.status = status;
+		this.types=types;
 	}
 	public Long getNo() {
 		return no;
@@ -58,6 +59,14 @@ public class Realty {
 		this.status = status;
 	}
 
+	public Types getTypes() {
+		return types;
+	}
+
+	public void setTypes(Types types) {
+		this.types = types;
+	}
+	
 	public String getProvince() {
 		return province;
 	}
@@ -65,12 +74,21 @@ public class Realty {
 	public void setProvince(String province) {
 		this.province = province;
 	}
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
+	}
 
 	@Override
 	public String toString() {
 		return "Realty [no=" + no + ", title=" + title + ", publishedDate=" + publishedDate + ", user=" + user
-				+ ", status=" + getStatus() + ", province=" + province + "]";
+				+ ", status=" + status + ", province=" + province + ", district=" + district + ", types=" + types + "]";
 	}
+
+
 
 
 }
